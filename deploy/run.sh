@@ -31,3 +31,4 @@ sudo ln -s /etc/nginx/sites-available/django.conf /etc/nginx/sites-enabled/djang
 sudo supervisorctl reread
 sudo supervisorctl update
 sudo nginx -s reload
+
