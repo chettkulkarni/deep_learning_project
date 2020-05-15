@@ -1,0 +1,1 @@
+web: gunicorn deeplearning.wsgi:application
