@@ -20,11 +20,11 @@ sudo pip3 install -r requirements.txt
 
 # Copy configuration files
 # Updating gunicorn conf in supervisor
-sudo cp /home/ubuntu/sp20-cmpe-202-sec-49-team-project-fourreal/conf.d/gunicorn.conf /etc/supervisor/conf.d
+sudo cp /home/ubuntu/deep_learning_project/conf.d/gunicorn.conf /etc/supervisor/conf.d
 
 # Updating nginx and django conf in nginx
-sudo cp /home/ubuntu/sp20-cmpe-202-sec-49-team-project-fourreal/conf.d/django.conf /etc/nginx/sites-available
-sudo cp /home/ubuntu/sp20-cmpe-202-sec-49-team-project-fourreal/conf.d/nginx.conf /etc/nginx/nginx.conf
+sudo cp /home/ubuntu/deep_learning_project/conf.d/django.conf /etc/nginx/sites-available
+sudo cp /home/ubuntu/deep_learning_project/conf.d/nginx.conf /etc/nginx/nginx.conf
 sudo ln -s /etc/nginx/sites-available/django.conf /etc/nginx/sites-enabled/django.conf
 
 # Update the supervisor and nginx configuration

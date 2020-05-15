@@ -39,12 +39,12 @@
       become: true
       pip:
         executable: pip3
-        requirements: /home/ubuntu/sp20-cmpe-202-sec-49-team-project-fourreal/requirements.txt
+        requirements: /home/ubuntu/deep_learning_project/requirements.txt
 
     - name: Copy gunicorn.conf to the appropriate location
       become: yes
       copy:
-        src: /home/ubuntu/sp20-cmpe-202-sec-49-team-project-fourreal/conf.d/gunicorn.conf
+        src: /home/ubuntu/deep_learning_project/conf.d/gunicorn.conf
         #src: ../conf.d/gunicorn.conf
         dest: /etc/supervisor/conf.d
         remote_src: yes
@@ -52,7 +52,7 @@
     - name: Copy django.conf (nginx) to sites-enabled
       become: yes
       copy:
-        src: /home/ubuntu/sp20-cmpe-202-sec-49-team-project-fourreal/conf.d/django.conf
+        src: /home/ubuntu/deep_learning_project/conf.d/django.conf
         #src: ../conf.d/django.conf
         dest: /etc/nginx/sites-available
         remote_src: yes
@@ -60,7 +60,7 @@
     - name: Copy nginx.conf (nginx) to main location
       become: yes
       copy:
-        src: /home/ubuntu/sp20-cmpe-202-sec-49-team-project-fourreal/conf.d/nginx.conf
+        src: /home/ubuntu/deep_learning_project/conf.d/nginx.conf
         dest: /etc/nginx/nginx.conf
         remote_src: yes
 
