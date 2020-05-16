@@ -24,7 +24,7 @@ SECRET_KEY = 'bx^hpa(5wu-!1t*+xtzbs&hla7lr@l7!uh3ndho59i^@796%$='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','https://adworldcmpe258.herokuapp.com','ec2-3-84-190-118.compute-1.amazonaws.com','3.84.190.118/','0.0.0.0','*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','https://adworldcmpe258.herokuapp.com','0.0.0.0','*']
 
 # Application definition
 
@@ -131,10 +131,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-
 
 
 
