@@ -26,7 +26,6 @@ def getResnet(request):
         detector.setModelTypeAsRetinaNet()
         detector.setModelPath(path)
         detector.loadModel()
-
         detections = detector.detectObjectsFromImage(input_image=f,
                                                      output_image_path='media/imagetest.jpg')
         item=[]
