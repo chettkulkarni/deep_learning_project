@@ -150,7 +150,7 @@ def default(request):
 def getVideo(request):
     if request.method == "POST":
         try:
-            f = request.FILES['sentFile']  # here you get the files needed
+            file = request.FILES['sentFile']  #
         except:
             return render(request, 'homepage.html')
 
