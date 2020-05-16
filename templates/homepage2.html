@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{%  load static%}
+
+
+
+{% block content %}
+
+    <script>
+        function loaderFunc() {
+            $(".loader").css("display", "block");
+            $("#subButton").css("display", "none");
+            $("#chooseFile").css("display", "none");
+        }
+    </script>
+<style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+    <form method="post" enctype="multipart/form-data" onsubmit="loaderFunc()">
+    {% csrf_token %}
+<div class="jumbotron border-secondary" style="border-radius: 5px; box-shadow: 10px 14px 18px 10px rgba(184, 182, 169,0.4); margin: 30px; background-color: rgba(255,255,255,0.9);">
+    <input id="chooseFile" style="display: block" type="file" accept="video/mp4" name="sentFile" />
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    <input id="subButton"  style="display: block" type="submit" name="submit" value="Upload"  />
+</div>
+    <div class="loader" style="display: none"></div>
+</form>
+
+
+{% endblock %}

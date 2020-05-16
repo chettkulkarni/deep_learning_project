@@ -3,10 +3,10 @@
 
 {% block content %}
 
+    <h2   class="jumbotron border-secondary" style="border-radius: 5px; box-shadow: 10px 14px 18px 10px rgba(184, 182, 169,0.4); margin: 30px; background-color: rgba(255,255,255,0.9);">Suggested Ad's</h2>
 {% for ad in ads %}
-    <div >
-    <img class="card border border-secondary" style="border-radius: 5px; box-shadow: 10px 14px 18px 10px rgba(0,0,0,0.2); margin: 30px; background-color: rgba(255,255,255,0.9);">
-        <h5 class="card-header" style="font-size: 2.5em"><em>{{ ad.adName }}</em></h5>
+    <div class="jumbotron border-secondary" style="border-radius: 5px; box-shadow: 10px 14px 18px 10px rgba(184, 182, 169,0.4); margin: 30px; background-color: rgba(255,255,255,0.9);">
+        <h5 class="header" style="font-size: 2.5em"><em>{{ ad.adName }}</em></h5>
       <div class="card-body">
           <h3>  {{ ad.adContent }}</h3>
           <h4 class="card-title"> {{ ad.categoryName }} </h4>
@@ -15,10 +15,8 @@
 
 
 {% endfor %}
-{#    {% if photo %}#}
-    <img src="/media/imagetest.jpg"  style="width:600px;height:600px;"/>
-{#    {% else %}#}
-{#    <source src="/media/imagetest_video.avi" type='video/avi; codecs="avc1.42E01E, mp4a.40.2"'>#}
-{#    {% endif %}#}
+    <div class="jumbotron border-secondary" style="border-radius: 5px; box-shadow: 10px 14px 18px 10px rgba(184, 182, 169,0.4); margin: 30px; background-color: rgba(255,255,255,0.9);">
+    <img src="/media/imagetest.jpg"  style="width:600px;height:600px;" alt=""/>
+</div>
 
 {% endblock content %}

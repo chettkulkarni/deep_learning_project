@@ -25,8 +25,9 @@ urlpatterns = [
     path('getResnet/', views.getResnet, name='homepage'),
     path('stopResnet/', views.getResnet, name='homepage'),
     path('getYolo/', views.getYolo, name='homepage'),
-    # path('getCustom/', views.getCustom, name='homepage'),
-    # path('getVideo/', views.getVideo, name='homepage'),
+    path('getYoloTiny/', views.getYoloTiny, name='homepage'),
+    path('getCustom/', views.getCustom, name='homepage'),
+    path('getVideo/', views.getVideo, name='homepage'),
     path('', views.default),
 ]
 

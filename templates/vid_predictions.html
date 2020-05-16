@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% for ad in ads %}
+    <div >
+    <img class="card border border-secondary" style="border-radius: 5px; box-shadow: 10px 14px 18px 10px rgba(0,0,0,0.2); margin: 30px; background-color: rgba(255,255,255,0.9);">
+        <h5 class="card-header" style="font-size: 2.5em"><em>{{ ad.adName }}</em></h5>
+      <div class="card-body">
+          <h3>  {{ ad.adContent }}</h3>
+          <h4 class="card-title"> {{ ad.categoryName }} </h4>
+      </div>
+    </div>
+
+
+{% endfor %}
+
+<div>
+    <a href="/media/imagetest_video.avi" >download the annotated video </a>
+</div>
+
+{% endblock content %}
