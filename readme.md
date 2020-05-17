@@ -36,14 +36,11 @@ Project by : Chetan Kulkarni
 <kbd>![Image description](https://github.com/chettkulkarni/deep_learning_project/blob/master/images/image8.png)</kbd>
 
 
-## **Image - Downloading Python Script**
-[![Alt text](https://img.youtube.com/vi/rewYYVJp1y4/0.jpg)](https://www.youtube.com/watch?v=rewYYVJp1y4)
+## **[Transfer Learning Script](https://www.slideshare.net/chettykulkarni/ad-world-234131641)**
 
-## **Transfer Learning Script**
-[![Alt text](https://img.youtube.com/vi/rewYYVJp1y4/0.jpg)](https://www.youtube.com/watch?v=rewYYVJp1y4)
+## **[Transfer Learning Script](https://www.slideshare.net/chettykulkarni/ad-world-234131641)**
 
-## **Django Project link**
-[![Alt text](https://img.youtube.com/vi/rewYYVJp1y4/0.jpg)](https://www.youtube.com/watch?v=rewYYVJp1y4)
+## **[Django Project link](https://www.slideshare.net/chettykulkarni/ad-world-234131641)**
 
 
 
