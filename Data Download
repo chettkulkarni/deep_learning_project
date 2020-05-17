@@ -1,0 +1,195 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled9.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyOtSc2XDaCib2251/fxzwsN",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/chettkulkarni/deep_learning_project/blob/master/Data%20Download\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Hut37X0y3dcs",
+        "colab_type": "code",
+        "outputId": "92ed5931-daeb-4ad6-8bd6-09dbb7c1bfb4",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 938
+        }
+      },
+      "source": [
+        "!pip install openimages"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Requirement already satisfied: openimages in /usr/local/lib/python3.6/dist-packages (0.0.1)\n",
+            "Requirement already satisfied: lxml in /usr/local/lib/python3.6/dist-packages (from openimages) (4.2.6)\n",
+            "Requirement already satisfied: boto3 in /usr/local/lib/python3.6/dist-packages (from openimages) (1.13.1)\n",
+            "Requirement already satisfied: pandas in /usr/local/lib/python3.6/dist-packages (from openimages) (1.0.3)\n",
+            "Requirement already satisfied: tqdm in /usr/local/lib/python3.6/dist-packages (from openimages) (4.38.0)\n",
+            "Requirement already satisfied: cvdata in /usr/local/lib/python3.6/dist-packages (from openimages) (0.0.7)\n",
+            "Requirement already satisfied: requests in /usr/local/lib/python3.6/dist-packages (from openimages) (2.23.0)\n",
+            "Requirement already satisfied: s3transfer<0.4.0,>=0.3.0 in /usr/local/lib/python3.6/dist-packages (from boto3->openimages) (0.3.3)\n",
+            "Requirement already satisfied: jmespath<1.0.0,>=0.7.1 in /usr/local/lib/python3.6/dist-packages (from boto3->openimages) (0.9.5)\n",
+            "Requirement already satisfied: botocore<1.17.0,>=1.16.1 in /usr/local/lib/python3.6/dist-packages (from boto3->openimages) (1.16.1)\n",
+            "Requirement already satisfied: pytz>=2017.2 in /usr/local/lib/python3.6/dist-packages (from pandas->openimages) (2018.9)\n",
+            "Requirement already satisfied: python-dateutil>=2.6.1 in /usr/local/lib/python3.6/dist-packages (from pandas->openimages) (2.8.1)\n",
+            "Requirement already satisfied: numpy>=1.13.3 in /usr/local/lib/python3.6/dist-packages (from pandas->openimages) (1.18.3)\n",
+            "Requirement already satisfied: pillow in /usr/local/lib/python3.6/dist-packages (from cvdata->openimages) (7.0.0)\n",
+            "Requirement already satisfied: ImageHash in /usr/local/lib/python3.6/dist-packages (from cvdata->openimages) (4.1.0)\n",
+            "Requirement already satisfied: opencv-python in /usr/local/lib/python3.6/dist-packages (from cvdata->openimages) (4.1.2.30)\n",
+            "Requirement already satisfied: contextlib2 in /usr/local/lib/python3.6/dist-packages (from cvdata->openimages) (0.5.5)\n",
+            "Requirement already satisfied: tensorflow-cpu>=2.1 in /usr/local/lib/python3.6/dist-packages (from cvdata->openimages) (2.2.0)\n",
+            "Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /usr/local/lib/python3.6/dist-packages (from requests->openimages) (1.24.3)\n",
+            "Requirement already satisfied: chardet<4,>=3.0.2 in /usr/local/lib/python3.6/dist-packages (from requests->openimages) (3.0.4)\n",
+            "Requirement already satisfied: idna<3,>=2.5 in /usr/local/lib/python3.6/dist-packages (from requests->openimages) (2.9)\n",
+            "Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.6/dist-packages (from requests->openimages) (2020.4.5.1)\n",
+            "Requirement already satisfied: docutils<0.16,>=0.10 in /usr/local/lib/python3.6/dist-packages (from botocore<1.17.0,>=1.16.1->boto3->openimages) (0.15.2)\n",
+            "Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.6/dist-packages (from python-dateutil>=2.6.1->pandas->openimages) (1.12.0)\n",
+            "Requirement already satisfied: scipy in /usr/local/lib/python3.6/dist-packages (from ImageHash->cvdata->openimages) (1.4.1)\n",
+            "Requirement already satisfied: PyWavelets in /usr/local/lib/python3.6/dist-packages (from ImageHash->cvdata->openimages) (1.1.1)\n",
+            "Requirement already satisfied: google-pasta>=0.1.8 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (0.2.0)\n",
+            "Requirement already satisfied: termcolor>=1.1.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (1.1.0)\n",
+            "Requirement already satisfied: tensorboard<2.3.0,>=2.2.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (2.2.1)\n",
+            "Requirement already satisfied: grpcio>=1.8.6 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (1.28.1)\n",
+            "Requirement already satisfied: h5py<2.11.0,>=2.10.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (2.10.0)\n",
+            "Requirement already satisfied: keras-preprocessing>=1.1.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (1.1.0)\n",
+            "Requirement already satisfied: wheel>=0.26; python_version >= \"3\" in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (0.34.2)\n",
+            "Requirement already satisfied: protobuf>=3.8.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (3.10.0)\n",
+            "Requirement already satisfied: tensorflow-estimator<2.3.0,>=2.2.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (2.2.0)\n",
+            "Requirement already satisfied: wrapt>=1.11.1 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (1.12.1)\n",
+            "Requirement already satisfied: gast==0.3.3 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (0.3.3)\n",
+            "Requirement already satisfied: astunparse==1.6.3 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (1.6.3)\n",
+            "Requirement already satisfied: absl-py>=0.7.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (0.9.0)\n",
+            "Requirement already satisfied: opt-einsum>=2.3.2 in /usr/local/lib/python3.6/dist-packages (from tensorflow-cpu>=2.1->cvdata->openimages) (3.2.1)\n",
+            "Requirement already satisfied: tensorboard-plugin-wit>=1.6.0 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (1.6.0.post3)\n",
+            "Requirement already satisfied: markdown>=2.6.8 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (3.2.1)\n",
+            "Requirement already satisfied: google-auth-oauthlib<0.5,>=0.4.1 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (0.4.1)\n",
+            "Requirement already satisfied: werkzeug>=0.11.15 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (1.0.1)\n",
+            "Requirement already satisfied: setuptools>=41.0.0 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (46.1.3)\n",
+            "Requirement already satisfied: google-auth<2,>=1.6.3 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (1.7.2)\n",
+            "Requirement already satisfied: requests-oauthlib>=0.7.0 in /usr/local/lib/python3.6/dist-packages (from google-auth-oauthlib<0.5,>=0.4.1->tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (1.3.0)\n",
+            "Requirement already satisfied: pyasn1-modules>=0.2.1 in /usr/local/lib/python3.6/dist-packages (from google-auth<2,>=1.6.3->tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (0.2.8)\n",
+            "Requirement already satisfied: cachetools<3.2,>=2.0.0 in /usr/local/lib/python3.6/dist-packages (from google-auth<2,>=1.6.3->tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (3.1.1)\n",
+            "Requirement already satisfied: rsa<4.1,>=3.1.4 in /usr/local/lib/python3.6/dist-packages (from google-auth<2,>=1.6.3->tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (4.0)\n",
+            "Requirement already satisfied: oauthlib>=3.0.0 in /usr/local/lib/python3.6/dist-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib<0.5,>=0.4.1->tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (3.1.0)\n",
+            "Requirement already satisfied: pyasn1<0.5.0,>=0.4.6 in /usr/local/lib/python3.6/dist-packages (from pyasn1-modules>=0.2.1->google-auth<2,>=1.6.3->tensorboard<2.3.0,>=2.2.0->tensorflow-cpu>=2.1->cvdata->openimages) (0.4.8)\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "6gL7eFcY3eGF",
+        "colab_type": "code",
+        "outputId": "d79d70b4-05f1-49ea-d57e-270615d37b46",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 502
+        }
+      },
+      "source": [
+        "from openimages.download import download_dataset\n",
+        "download_dataset(\"/dest/dir\", [\"Bottle\",], annotation_format=\"pascal\")"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "2020-05-08  06:23:04 INFO Downloading 53 train images for class 'hammer'\n",
+            "100%|██████████| 53/53 [00:01<00:00, 29.06it/s]\n",
+            "2020-05-08  06:23:06 INFO Creating 53 train annotations (pascal) for class 'hammer'\n",
+            "100%|██████████| 53/53 [00:00<00:00, 1104.97it/s]\n",
+            "2020-05-08  06:23:06 INFO Downloading 166 train images for class 'scissors'\n",
+            "100%|██████████| 166/166 [00:04<00:00, 41.26it/s]\n",
+            "2020-05-08  06:23:10 INFO Creating 166 train annotations (pascal) for class 'scissors'\n",
+            "100%|██████████| 166/166 [00:00<00:00, 1784.12it/s]\n",
+            "2020-05-08  06:23:11 INFO Downloading 0 validation images for class 'hammer'\n",
+            "0it [00:00, ?it/s]\n",
+            "2020-05-08  06:23:11 INFO Creating 0 validation annotations (pascal) for class 'hammer'\n",
+            "0it [00:00, ?it/s]\n",
+            "2020-05-08  06:23:11 INFO Downloading 1 validation images for class 'scissors'\n",
+            "100%|██████████| 1/1 [00:00<00:00,  1.49it/s]\n",
+            "2020-05-08  06:23:12 INFO Creating 1 validation annotations (pascal) for class 'scissors'\n",
+            "100%|██████████| 1/1 [00:00<00:00, 70.56it/s]\n",
+            "2020-05-08  06:23:14 INFO Downloading 0 test images for class 'hammer'\n",
+            "0it [00:00, ?it/s]\n",
+            "2020-05-08  06:23:14 INFO Creating 0 test annotations (pascal) for class 'hammer'\n",
+            "0it [00:00, ?it/s]\n",
+            "2020-05-08  06:23:14 INFO Downloading 5 test images for class 'scissors'\n",
+            "100%|██████████| 5/5 [00:00<00:00,  5.87it/s]\n",
+            "2020-05-08  06:23:15 INFO Creating 5 test annotations (pascal) for class 'scissors'\n",
+            "100%|██████████| 5/5 [00:00<00:00, 215.76it/s]\n"
+          ],
+          "name": "stderr"
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'hammer': {'annotations_dir': '/dest/dir/hammer/pascal',\n",
+              "  'images_dir': '/dest/dir/hammer/images'},\n",
+              " 'scissors': {'annotations_dir': '/dest/dir/scissors/pascal',\n",
+              "  'images_dir': '/dest/dir/scissors/images'}}"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rrgBA-wA3pGJ",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "download_dataset(\"/dest/dir\", [\"Table\"], annotation_format=\"pascal\")"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "wUMrWeGmySgu",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "download_dataset(\"/dest/dir\", [\"Clothing\"], annotation_format=\"pascal\")"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    }
+  ]
+}
