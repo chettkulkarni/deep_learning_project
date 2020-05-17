@@ -36,17 +36,24 @@ Project by : Chetan Kulkarni
 <kbd>![Image description](https://github.com/chettkulkarni/deep_learning_project/blob/master/images/image8.png)</kbd>
 
 
-## **[Transfer Learning Script](https://www.slideshare.net/chettykulkarni/ad-world-234131641)**
+## **[Data Gathering Notebook](https://github.com/chettkulkarni/deep_learning_project/blob/master/ImageDataDownload.ipynb)**
 
-## **[Transfer Learning Script](https://www.slideshare.net/chettykulkarni/ad-world-234131641)**
+## **[Transfer Learning Script](https://github.com/chettkulkarni/deep_learning_project/blob/master/TransferLearning.ipynb)**
 
-## **[Django Project link](https://www.slideshare.net/chettykulkarni/ad-world-234131641)**
+## **[Django Project link](https://github.com/chettkulkarni/deep_learning_project)**
 
 
-@misc {ImageAI,
+@misc{ImageAI,
     author = "Moses and John Olafenwa",
     title  = "ImageAI, an open source python library built to empower developers to build applications and systems  with self-contained Computer Vision capabilities",
     url    = "https://github.com/OlafenwaMoses/ImageAI",
     month  = "mar",
     year   = "2018--"
+}
+
+@article{yolov3,
+  title={YOLOv3: An Incremental Improvement},
+  author={Redmon, Joseph and Farhadi, Ali},
+  journal = {arXiv},
+  year={2018}
 }
