@@ -38,7 +38,7 @@ Project by : Chetan Kulkarni
 
 ## **[Data Gathering Notebook](https://github.com/chettkulkarni/deep_learning_project/blob/master/ImageDataDownload.ipynb)**
 
-## **[Transfer Learning Script](https://github.com/chettkulkarni/deep_learning_project/blob/master/TransferLearning.ipynb)**
+## **[Transfer Learning Script](https://tensorboard.dev/experiment/1AAYK37GSx2Epx1X7bHNRQ/)**
 
 ## **[Django Project link](https://github.com/chettkulkarni/deep_learning_project)**
 
