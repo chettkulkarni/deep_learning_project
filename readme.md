@@ -35,6 +35,20 @@ Project by : Chetan Kulkarni
 
 <kbd>![Image description](https://github.com/chettkulkarni/deep_learning_project/blob/master/images/image8.png)</kbd>
 
+## **TensorBoard Graph**
+
+<kbd>![Image description](https://github.com/chettkulkarni/deep_learning_project/blob/master/images/image9.png)</kbd>
+
+## **TensorBoard Scalars**
+
+<kbd>![Image description](https://github.com/chettkulkarni/deep_learning_project/blob/master/images/image10.png)</kbd>
+<kbd>![Image description](https://github.com/chettkulkarni/deep_learning_project/blob/master/images/image11.png)</kbd>
+<kbd>![Image description](https://github.com/chettkulkarni/deep_learning_project/blob/master/images/image12.png)</kbd>
+<kbd>![Image description](https://github.com/chettkulkarni/deep_learning_project/blob/master/images/image13.png)</kbd>
+<kbd>![Image description](https://github.com/chettkulkarni/deep_learning_project/blob/master/images/image14.png)</kbd>
+Please visit tensorboard collab to have a full tensorboard log visualisation
+
+
 
 ## **[Data Gathering Notebook](https://github.com/chettkulkarni/deep_learning_project/blob/master/ImageDataDownload.ipynb)**
 
