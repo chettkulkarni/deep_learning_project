@@ -3,7 +3,8 @@ Project by : Chetan Kulkarni
 
 
 ## **[Quick Sneak Peek]
-<kbd>![](https://github.com/chettkulkarni/deep_learning_project/blob/master/images/demo.gif)</kbd>
+<kbd>![](images/demo.gif)</kbd>
+![Farmers Market Finder - Animated gif demo](images/demo.gif)
 
 
 ## **[Website Link](https://chettykulkarni.live)**
