@@ -4,7 +4,7 @@ Project by : Chetan Kulkarni
 
 ## **[Quick Sneak Peek]
 <kbd>![](images/demo.gif)</kbd>
-![Farmers Market Finder - Animated gif demo](images/demo.gif)
+![Farmers Market Finder - Animated gif demo](https://giphy.com/gifs/fTsAkMbk09GxPfzoQ5/html5)
 
 
 ## **[Website Link](https://chettykulkarni.live)**
