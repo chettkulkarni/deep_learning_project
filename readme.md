@@ -4,7 +4,7 @@ Project by : Chetan Kulkarni
 
 ## **[Quick Sneak Peek]
 
-<img src="/images/demo.gif?raw=true" width="200px">
+<img src="/images/demo.gif?raw=true" width="1000px">
 
 ## **[Website Link](https://chettykulkarni.live)**
 
