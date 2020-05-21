@@ -2,7 +2,7 @@
 Project by : Chetan Kulkarni
 
 
-## **[Quick Sneak Peek]
+## **[Quick Sneak Peek]**
 
 <img src="/images/demo.gif?raw=true" width="1000px">
 
