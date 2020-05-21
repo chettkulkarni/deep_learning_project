@@ -2,6 +2,10 @@
 Project by : Chetan Kulkarni
 
 
+## **[Quick Sneak Peek]
+<kbd>![Image description](https://github.com/chettkulkarni/deep_learning_project/blob/master/images/demo.gif)</kbd>
+
+
 ## **[Website Link](https://chettykulkarni.live)**
 
 
