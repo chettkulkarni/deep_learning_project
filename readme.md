@@ -42,6 +42,13 @@ Project by : Chetan Kulkarni
 
 ## **[Django Project link](https://github.com/chettkulkarni/deep_learning_project)**
 
+## **[Tensorboard Link](https://tensorboard.dev/experiment/1AAYK37GSx2Epx1X7bHNRQ/#scalars&run=.)**
+Please note the graph is really big and was failing when i uploaded to tensorboard dev. Clear Tensorboard Graphs can be found in seperate tensorboard collab below
+
+## **[Tensorboard Collab](https://tensorboard.dev/experiment/1AAYK37GSx2Epx1X7bHNRQ/#scalars&run=.)**
+
+
+
 
 @misc{ImageAI,
     author = "Moses and John Olafenwa",
