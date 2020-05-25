@@ -6,7 +6,7 @@ Project by : Chetan Kulkarni
 
 <img src="/images/demo.gif?raw=true" width="1000px">
 
-## **[Website Link](https://chettykulkarni.live)**
+## **[Website Link](http://chettykulkarni.live)**
 
 
 ## **[Presentation File ](https://www.slideshare.net/chettykulkarni/ad-world-234131641)**
